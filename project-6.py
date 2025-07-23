@@ -1,3 +1,7 @@
+import time
+import random
+
+
 def write_entry(filename, entry):
     with open(filename, "a") as file:
         file.write(f"{entry}\n")
@@ -35,7 +39,7 @@ def main():
         print("2. View All Entries")
         print("3. Search for an Entry")
         print("4. Delete All Entries")
-        print("5. Exit")
+        print("0. Exit")
 
         choice = input("User Input: ")
 
@@ -79,8 +83,10 @@ def main():
             else:
                 print("Deletion cancelled.")
 
-        elif choice == "5":
+        elif choice == "0":
             print("Thank you for using Personal Journal Manager. Goodbye!")
+            print("Exiting the program...")
+            time.sleep(random.randint(1, 6))  # Simulate a delay before exit
             break
 
         else:
